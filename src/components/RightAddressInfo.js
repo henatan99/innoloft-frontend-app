@@ -23,7 +23,7 @@ const RightAddressInfo = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full relative my-4">
+            <div className="w-full relative my-4 h-[200px]">
                 <MapComponent lat={0} lng={0} />
             </div>
         </div>

@@ -8,9 +8,9 @@ import { MdExpandMore } from 'react-icons/md';
 const LeftNav = () => {
 
     return (
-        <div className="p-8 w-72">
+        <div className="px-4 py-8 w-72">
             <div className="flex flex-row items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden"><img src={Profile}></img></div>
+                <div className="w-12 h-12 rounded-full overflow-hidden"><img src={Profile}></img></div>
                 
                 <div className="flex flex-col items-start ml-5">
                     <span>Sven Pietsch</span>

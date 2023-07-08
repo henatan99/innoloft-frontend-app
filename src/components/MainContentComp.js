@@ -7,9 +7,9 @@ const MainContentComp = (props) => {
     const { content, type } = props;
 
     return (
-        <div>
-            <div>
-                <img src={MainContentImg}></img>
+        <div className="flex-grow">
+            <div className="w-full">
+                <img src={MainContentImg} className="w-full"></img>
             </div>
             <div className="p-4">
                 {
@@ -17,7 +17,6 @@ const MainContentComp = (props) => {
                     <EditSection title={content.title} description={content.description} /> :
                     <ContentSection title={content.title} description={content.description} />
                 }
-                
             </div>
         </div>
     )

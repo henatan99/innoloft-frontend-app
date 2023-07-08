@@ -5,14 +5,14 @@ import MapComponent from "./MapComponent";
 
 const RightAddressInfo = () => {
     return (
-        <div className="p-8 w-80 text-left">
+        <div className="p-8 w-full lg:w-80 text-left">
             <span className="my-4 mr-auto">Offered By</span>
             <div className="my-4">
-                <div className="w-40 mb-3">
+                <div className="w-36 mb-3">
                     <img src={InnoloftLogo}></img>
                 </div>
                 <div className="flex flex-row items-center">
-                    <div className="w-16 h-16 rounded-full overflow-hidden">
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
                         <img src={Profile}>
                     </img>
                     </div>
@@ -24,7 +24,7 @@ const RightAddressInfo = () => {
                 </div>
             </div>
             <div className="w-full relative my-4 h-[200px]">
-                <MapComponent lat={0} lng={0} />
+                <MapComponent lat={50.775555} lng={6.083611} />
             </div>
         </div>
     )

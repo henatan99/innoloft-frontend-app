@@ -28,8 +28,8 @@ function App() {
   return (
     <div className="App  bg-custom-light-gray">
       <Header />
-      <main className='flex flex-row px-[10%]'>
-        <div className='main'>
+      <main className='flex flex-row px-[2%] max-w-[1200px] mx-auto'>
+        <div className='hidden md:block'>
           <LeftNav />
         </div>
         <div className='flex flex-col flex-grow'>
@@ -40,8 +40,8 @@ function App() {
             <div className='my-1'>
               <MainNavBar leftComp={<MainCompNav list={mainNavBarList}/>} btnText={"View Offer"} />
             </div>
-            <div className='flex flex-row bg-white rounded-lg overflow-hidden'>
-              <MainContentComp type={""} content={mainContent} />
+            <div className='flex flex-col lg:flex-row bg-white rounded-lg overflow-hidden'>
+              <MainContentComp type={"edit"} content={mainContent} />
               <div>
                 <RightAddressInfo />
               </div>

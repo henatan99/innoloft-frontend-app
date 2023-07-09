@@ -12,7 +12,7 @@ const VideoSection = (props) => {
             {
                 type === 'edit' ?
  
-                <div className="video mx-auto min-w-[60%] max-w-full w-auto">
+                <div className="video mx-auto min-w-[60%] lg:max-w-[60%] w-auto">
                     <ReactPlayer url={videoUrl} className="player" controls/>
                 </div>
                 

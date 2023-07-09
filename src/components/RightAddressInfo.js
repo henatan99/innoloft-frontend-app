@@ -6,7 +6,7 @@ import MapComponent from "./MapComponent";
 const RightAddressInfo = () => {
     return (
         <div className="p-8 w-full lg:w-80 text-left">
-            <span className="my-4 mr-auto">Offered By</span>
+            <span className="my-4 mr-auto text-sm">Offered By</span>
             <div className="my-4">
                 <div className="w-36 mb-3">
                     <img src={InnoloftLogo}></img>
@@ -17,8 +17,8 @@ const RightAddressInfo = () => {
                     </img>
                     </div>
                     
-                    <div className="flex flex-col items-start ml-5">
-                        <span>Sven Pietsch</span>
+                    <div className="flex flex-col items-start ml-5 text-xs opacity-75">
+                        <span className="font-bold">Sven Pietsch</span>
                         <span>Innoloft Gmbh</span>
                     </div>
                 </div>

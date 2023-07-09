@@ -7,18 +7,18 @@ import { PiGear, PiGearSix } from 'react-icons/pi';
 const OfferDetailItem = (props) => {
     const { category, icon, list, type} = props;
     return (
-        <div className="flex items-left">
+        <div className="flex items-left opacity-75">
             <div className="">
                 {icon}
             </div>
             <div className="flex flex-col mx-3">
-                <span className="text-left" style={{lineHeight: 'normal'}}>{category}</span>
+                <span className="text-left text-sm" style={{lineHeight: 'normal'}}>{category}</span>
                 <ul className="flex my-3 flex-wrap">
                     {
                         list.length > 0 &&
                         list.map(
                             item => 
-                            <li  className="px-3 py-1 mr-2 mb-3 rounded-full bg-custom-gray flex flex-row">
+                            <li  className="px-3 py-1 mr-2 mb-3 rounded-full bg-custom-gray flex flex-row text-xs opacity-75">
                                 {
                                     type === 'edit' ? 
                                     <>
@@ -32,7 +32,7 @@ const OfferDetailItem = (props) => {
                                 }    
                             </li>)
                     }
-                    <button className="bg-custom-blue px-2 text-white inline-block w-[30px] h-[30px] rounded-full">+</button>
+                    <button className="bg-custom-blue text-white inline-block w-[20px] h-[20px] rounded-full text-xs">+</button>
                 </ul>
             </div>
         </div>
@@ -57,7 +57,7 @@ const OfferDetails = (props) => {
                     {
                         cats.map(cat => {
                             return (
-                                <li className="w-[50%]">
+                                <li className="w-full lg:w-[50%]">
                                     <OfferDetailItem 
                                         category={cat.category}
                                         icon={cat.icon}
@@ -70,7 +70,7 @@ const OfferDetails = (props) => {
                     }
                     {
                         type === 'edit' && 
-                        <button className="bg-custom-blue px-2 py-1 text-white inline-block w-[50%] rounded-md"> 
+                        <button className="bg-custom-blue px-2 py-1 text-white inline-block w-full lg:w-[50%] rounded-md text-sm"> 
                             Add Catgory
                         </button>
                     }

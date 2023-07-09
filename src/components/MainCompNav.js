@@ -17,7 +17,7 @@ const MainCompNav = (props) => {
 
     return (
         <div>
-            <ul className="flex flex-row items-center">
+            <ul className="flex flex-row items-center opacity-75 text-sm">
                 <li className="flex items-center mr-4"><a href=""><RiHomeLine /></a></li>
                 {
                     list.length > 0 && 

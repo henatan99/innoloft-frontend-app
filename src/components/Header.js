@@ -16,7 +16,7 @@ const Header = () => {
                 <input 
                     type="text"
                     placeholder="Enter interests, keyword, company name, etc."
-                    className="leading-tight pl-2 pr-6 py-1 rounded-md border border-gray-300 w-full focus-outline-none"
+                    className="leading-tight pl-2 pr-6 py-1 rounded-md border border-gray-300 w-full focus-outline-none text-xs"
                 />
                 <button className="absolute right-0 mr-2">
                     <CiSearch />

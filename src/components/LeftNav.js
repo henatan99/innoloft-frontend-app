@@ -4,6 +4,7 @@ import { RiHomeLine } from "react-icons/ri"
 import { HiOutlineUsers } from "react-icons/hi";
 import {TbBinaryTree2} from "react-icons/tb";
 import { MdExpandMore } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const LeftNav = () => {
 
@@ -20,7 +21,7 @@ const LeftNav = () => {
             <ul className="text-sm opacity-75">
                 <li className="flex flex-row items-center my-4">
                     <RiHomeLine />
-                    <a className="ml-3">Home</a>
+                    <Link to='/' className="ml-3">Home</Link>
                 </li>
                 <li className="flex flex-row items-center my-4">
                     <HiOutlineUsers />

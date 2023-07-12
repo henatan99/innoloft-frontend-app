@@ -6,11 +6,12 @@ import { MdExpandMore } from 'react-icons/md';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import {CiSearch} from 'react-icons/ci';
 
-const Header = () => {
+const Header = (props) => {
+    const {logo, mainColor} = props;
     return (
-        <header className="flex flex-row items-center w-full px-[12%] py-3 bg-custom-blue">
+        <header className={`flex flex-row items-center w-full px-[12%] py-3`} style={{backgroundColor: mainColor}}>
             <div className="w-28 flex flex-row items-center">
-                <img src={LogoWhite} alt="logo"></img>
+                <img src={logo} alt="logo"></img>
             </div>
             <div className="relative ml-[10%] w-[40%] hidden md:flex items-center">
                 <input 

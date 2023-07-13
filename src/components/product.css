@@ -1,0 +1,16 @@
+.quill {
+    opacity: 75%;
+}
+
+.quill > div {
+    border: none !important;
+    text-align: left;
+}
+
+.quill > div > div {
+    padding: 0;
+}
+
+.quill-edit {
+    opacity: 75%;
+}

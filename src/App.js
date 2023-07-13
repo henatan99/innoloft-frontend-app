@@ -5,6 +5,7 @@ import MainNavBar from './components/MainNavBar';
 import RightAddressInfo from './components/RightAddressInfo';
 import MainCompNav from './components/MainCompNav';
 import MainContentComp from './components/MainContentComp';
+import VideoSection from './components/videoSection';
 
 function App() {
   const mainNavBarList = [
@@ -45,6 +46,9 @@ function App() {
               <div>
                 <RightAddressInfo />
               </div>
+            </div>
+            <div className='my-3 bg-white rounded-lg p-4'>
+              <VideoSection type="edit"/>
             </div>
           </div>
         </div>

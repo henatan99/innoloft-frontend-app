@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { CiUndo, CiRedo } from 'react-icons/ci';
+import { BsCheck2 } from 'react-icons/bs';
 
 function EditSection() {
   const [content, setContent] = useState('');
@@ -90,9 +91,15 @@ function EditSection() {
         modules={modules}
         formats={formats}
         ref={quillRef}
-        style={{ height: '200px' }}
+        // style={{ height: '120px' }}
       />
-      <button onClick={handleTextChange}>Get Word Count: {wordCount}</button>
+      <div className='mt-2 flex flex-row justify-end'>
+        <button onClick={handleTextChange} className='px-3 py-1'>Cancel</button>
+        <button onClick={handleTextChange} className='px-3 py-1 bg-custom-blue rounded-md text-white flex items-center'>
+          <BsCheck2 />
+          <span className='ml-1'>Save</span>
+        </button>
+      </div>
     </div>
   );
 }

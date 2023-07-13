@@ -28,7 +28,6 @@ const Layout = ({children, edit, configuration, loading, error, getConfiguration
                         edit={edit} 
                     />
                     </div>
-                    {/* {children} */}
                     {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { configuration: configuration });
                     })}

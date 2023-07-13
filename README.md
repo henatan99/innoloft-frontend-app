@@ -1,8 +1,46 @@
 # Book Store App 
 
-This project is building a an application that fetches a product from backend API with whilte-Labeling configuration. It is a reponsive app that views differnet attributes of a product such as picture, userInfo, mainInfo, description, attributes and map. 
+This project is building a an application that fetches a product from backend API with whilte-Labeling configuration. It is a reponsive app that views differnet attributes of a product such as picture, userInfo, mainInfo, video, details, company, etc. 
 
-![Screenshot](app.gif)
+### Desktop view
+![Screenshot](images/desktop.gif)
+
+### Mobile view
+![Screenshot](images/mobile.gif)
+
+### Product details
+![Screenshot](images/details.gif)
+
+The product details shows the list of technologies, business Models, and also trl and Costs. All the fields are populated by api data. Once the user clicks the edit button, the edit state of the component will be activated and the contentEditable fields (all the list elements) become editable. Users can edit, delete and also add list items. 
+
+The trl has select options in which the options are populated by the `baseApi/trls/` request. There is a dropdown to select from the trls. When the user clicks the save button the updated fields of the product details will be assigned as payload for the put api request. 
+
+### Rich text editor
+The rich text editor allows users to write text, format it and save it. Bold, italics, indent, unindent, ordered list, unordered list, left, center, right, justify, hyperlink, undo, redo are the formatting functionalities. 
+
+In addition there is a wordCount which counts in real time and the editor will not let  users write once the max word limit is reached. Also the word count text turns to red. 
+
+The editor descroption and title are populated from data fetched from backend api. Once the user completes the writing and clicks the save button a put request will be sent to the backend api to save the changes to database. 
+
+Built with React Quill library. 
+
+![Screenshot](images/eitor.gif)
+
+![Screenshot](images/editor2.gif)
+
+### White-labeling
+
+The api has a configuration endpoint for white labeling. Based on the configuration for a specific APP_ID which is saved in the .env of the app, user has mainColor on the header background, logo and whether userSection will be dispayed or not. 
+
+### Api 
+    - baseApi: `https://api-test.innoloft.com`
+    - Product
+        - fetch: `GET /product/6781/`
+        - save: `PUT /product/6781/`
+    - TRL List
+        - `GET /trl/`
+    - APP Configuration
+        - `GET /configuration/:appId/`
 
 
 ## Built With
@@ -23,9 +61,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Install dependancies 
 `npm install`
 
-- Add `.env.js` file inside the src folder and add APP_ID=yourAppId, `yourAppId` must be either 1 or 2.
+- Add `.env` file inside the root folder and add APP_ID=yourAppId, `yourAppId` must be either 1 or 2.
 
-- And follow the App Usage instructions in the next section
 
 ## Available Scripts for App Usage
 
@@ -74,7 +111,8 @@ Give a :star:️ if you like this project!
 
 ## Acknowledgment 
 
-- Facebook team who created creat-react-app API 
+- Facebook team who created creat-react-app API
+- [Innoloft](https://www.linkedin.com/company/innoloft/)
 
 ## :memo: License
 

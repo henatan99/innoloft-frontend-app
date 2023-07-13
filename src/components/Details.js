@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { BiClock, BiGear } from 'react-icons/bi';
 import { FaChessKnight } from 'react-icons/fa';
 // import { GiMoneyBag } from 'react-icons/gi';
-import { PiGear, PiGearSix } from 'react-icons/pi';
+import { PiGear } from 'react-icons/pi';
 import { MdExpandMore } from 'react-icons/md';
 
 const ProductDetails = (props) => {

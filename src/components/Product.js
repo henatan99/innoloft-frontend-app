@@ -5,12 +5,14 @@ import 'react-quill/dist/quill.snow.css';
 import { CiUndo, CiRedo } from 'react-icons/ci';
 import { BsCheck2 } from 'react-icons/bs';
 import MainContentImg from "../main.svg"; 
+import './product.css';
 
 function Product(props) {
   const { edit, product, editProduct } = props;
   const [wordCount, setWordCount] = useState(0);
   const [description, setDescription] = useState(product.description); 
   const [name, setName] = useState(product.name)
+  const maxWord = 200;
 
   useEffect(() => {
     const addElementToComponent = () => {
@@ -30,8 +32,6 @@ function Product(props) {
       }
     
       return () => {
-        
-        
         if (undo) {
           ReactDOM.unmountComponentAtNode(undo);
           undo.removeEventListener('click', handleUndo);
@@ -47,7 +47,7 @@ function Product(props) {
   }, []);
   
   const handleChange = (value) => {
-    setDescription(value);
+    wordCount <= maxWord ? setDescription(value) : setDescription(description);
     setWordCount(value.trim().split(/\s+/).length);
   };
 
@@ -83,12 +83,6 @@ function Product(props) {
 
   const quillRef = useRef(null);
 
-  const handleTextChange = () => {
-    const quillInstance = quillRef.current.getEditor();
-    const wordCount = quillInstance.getText().trim().split(/\s+/).length;
-    
-  };
-
   const handleSave = () => {
     editProduct('1598', {...product, name: name, description: description})
   }
@@ -111,7 +105,7 @@ function Product(props) {
               {name}
             </h2>
           </div>
-          
+          <span className="absolute right-1 text-xs opacity-75" style={{color: wordCount >= maxWord && 'red'}}>{`${wordCount}/${maxWord}`}</span>
             {
               edit ?
               <>
@@ -121,6 +115,7 @@ function Product(props) {
                   modules={modules}
                   formats={formats}
                   ref={quillRef}
+                  className={edit ? 'quill-edit' : 'quill'}
                 />
                 <div className='mt-2 flex flex-row justify-end'>
                   <button onClick={handleCancel} className='px-3 py-1'>Cancel</button>
@@ -134,15 +129,10 @@ function Product(props) {
                 value={description}
                 modules={{toolbar: false}}
                 formats={formats}
-                ref={quillRef}
                 readOnly={true}
+                className={edit ? 'quill-edit' : 'quill'}
               />
             }
-            
-
-            {/* // <p className='text-left text-xs opacity-75'>{description}</p> */}
-          
-
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import LeftNav from './components/LeftNav';
+import RightAddressInfo from './components/RightAddressInfo';
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <Header />
       <div className='main'>
         <LeftNav />
+      </div>
+      <div>
+        <RightAddressInfo />
       </div>
     </div>
   );

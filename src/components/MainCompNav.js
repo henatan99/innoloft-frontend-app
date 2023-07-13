@@ -1,8 +1,20 @@
 import React from "react";
 import { RiHomeLine } from "react-icons/ri"
 
+
 const MainCompNav = (props) => {
     const {list} = props;
+    const textLength = window.innerWidth >= 768 ? 50 : 30;
+
+    // const truncateText = (text) => text > textLength ? text.slice(0, textLength) + '...' : text;
+
+    const truncateText = (text) => {
+        if (text.length > textLength) {
+          return text.slice(0, textLength) + '...';
+        }
+        return text;
+    };
+
     return (
         <div>
             <ul className="flex flex-row items-center">
@@ -13,7 +25,7 @@ const MainCompNav = (props) => {
                         return (
                             <>
                                 <li className="mr-4">&gt;</li>
-                                <li className="mr-4"><a href="">{item}</a></li>
+                                <li className="mr-4"><a href="">{truncateText(item)}</a></li>
                             </>
                         )
                     })

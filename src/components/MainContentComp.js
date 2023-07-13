@@ -14,7 +14,7 @@ const MainContentComp = (props) => {
             <div className="p-4">
                 {
                     type === 'edit' ? 
-                    <EditSection title={content.title} description={content.description} /> :
+                    <EditSection content={content} /> :
                     <ContentSection title={content.title} description={content.description} />
                 }
             </div>

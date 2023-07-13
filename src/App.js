@@ -6,6 +6,7 @@ import RightAddressInfo from './components/RightAddressInfo';
 import MainCompNav from './components/MainCompNav';
 import MainContentComp from './components/MainContentComp';
 import VideoSection from './components/videoSection';
+import OfferDetails from './components/OfferDetails';
 
 function App() {
   const mainNavBarList = [
@@ -24,6 +25,13 @@ function App() {
       literature that significantly improves simulation times and convergence properties
       in this way.
     `
+  }
+
+  const offerDetails = {
+    technology: {list: ['Label 1', 'Label 2', 'Label 3']},
+    businessModel: {list: ['Label 1', 'Label 2', 'Label3 ']},
+    trl: {list: ['TRL 9 - Actual system proven in operational environment']}, 
+    costs: {list: ['< 1000 $']}
   }
 
   return (
@@ -49,6 +57,9 @@ function App() {
             </div>
             <div className='my-3 bg-white rounded-lg p-4'>
               <VideoSection type="edit"/>
+            </div>
+            <div className='my-3 bg-white rounded-lg p-4'>
+              <OfferDetails offerDetails={offerDetails} type="edit" />
             </div>
           </div>
         </div>

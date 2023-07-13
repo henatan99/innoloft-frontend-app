@@ -5,8 +5,9 @@ import 'react-quill/dist/quill.snow.css';
 import { CiUndo, CiRedo } from 'react-icons/ci';
 import { BsCheck2 } from 'react-icons/bs';
 
-function EditSection() {
-  const [content, setContent] = useState('');
+function EditSection(props) {
+  const { content, type } = props;
+  const [contentState, setContentState] = useState('');
   const [wordCount, setWordCount] = useState(0);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ function EditSection() {
   }, []);
   
   const handleChange = (value) => {
-    setContent(value);
+    setContentState(value);
     setWordCount(value.trim().split(/\s+/).length);
   };
 
@@ -85,21 +86,33 @@ function EditSection() {
 
   return (
     <div className='relative'>
-      <ReactQuill
-        value={content}
-        onChange={handleChange}
-        modules={modules}
-        formats={formats}
-        ref={quillRef}
-        // style={{ height: '120px' }}
-      />
-      <div className='mt-2 flex flex-row justify-end'>
-        <button onClick={handleTextChange} className='px-3 py-1'>Cancel</button>
-        <button onClick={handleTextChange} className='px-3 py-1 bg-custom-blue rounded-md text-white flex items-center'>
-          <BsCheck2 />
-          <span className='ml-1'>Save</span>
-        </button>
+      <div className={`${type === "edit" && 'border'} p-1 mb-2 rounded-md text-left`}>
+        <h2 contentEditable={type === "edit" && "true"}>
+          {type === "edit" ? contentState.title : content.title } 
+        </h2>
       </div>
+      {
+        type === "edit" ? 
+        <>
+          <ReactQuill
+            value={contentState.description}
+            onChange={handleChange}
+            modules={modules}
+            formats={formats}
+            ref={quillRef}
+            // style={{ height: '120px' }}
+          />
+          <div className='mt-2 flex flex-row justify-end'>
+            <button onClick={handleTextChange} className='px-3 py-1'>Cancel</button>
+            <button onClick={handleTextChange} className='px-3 py-1 bg-custom-blue rounded-md text-white flex items-center'>
+              <BsCheck2 />
+              <span className='ml-1'>Save</span>
+            </button>
+          </div>
+        </> :
+        <p className='text-left'>{content.description}</p>
+      }
+
     </div>
   );
 }

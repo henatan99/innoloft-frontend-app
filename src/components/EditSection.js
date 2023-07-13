@@ -86,7 +86,7 @@ function EditSection(props) {
 
   return (
     <div className='relative'>
-      <div className={`${type === "edit" && 'border'} p-1 mb-2 rounded-md text-left`}>
+      <div className={`${type === "edit" && 'border'} ${type === "edit" && 'p-1'} mb-2 rounded-md text-left text-md`}>
         <h2 contentEditable={type === "edit" && "true"}>
           {type === "edit" ? contentState.title : content.title } 
         </h2>
@@ -110,7 +110,7 @@ function EditSection(props) {
             </button>
           </div>
         </> :
-        <p className='text-left'>{content.description}</p>
+        <p className='text-left text-xs opacity-75'>{content.description}</p>
       }
 
     </div>
